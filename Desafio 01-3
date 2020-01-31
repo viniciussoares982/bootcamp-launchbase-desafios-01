@@ -1,0 +1,43 @@
+/*USUÁRIOS E TECNOLOGIAS
+Crie um programa que armazena um array de usuários (objetos), cada usuário tem um nome e suas tecnologias*/
+const users =[
+    {
+        nome: 'Carlos',techs:['Java', 'HTML']
+    },
+    {
+       nome: 'Jasmine',techs:['JavaScript', 'CSS']
+    },
+    {
+        nome: 'Tuane',techs:['CSS', 'NodeJS']
+    }
+]
+/*Percorra a lista de usuários com uma estrutura de repetição imprimindo em tela as informações dos usuários
+Carlos trabalha com HTML, CSS
+Jarmine trabalha com JavaScript, CSS
+Tuane trabalha com HTML, Node.js*/
+
+for(let i=0; i < users.length; i++){
+    console.log(`${users[i].nome} trabalha com ${users[i].techs}\n`)
+}
+
+/*----------------------------------------------------------------------------------------------------------
+BUSCA POR TECNOLOGIA
+Crie uma função que recebe os dados de um objeto de usuário e retorna SE o usuário trabalha com CSS ou não. 
+Essa função deve retornar um boolean true/false.*/
+
+function UsaCSS(users) {
+    for(let i = 0; i < users.length; i ++){
+        users[i].techs.css = false
+        for(let t= 0; t < users[i].techs.length; t++){
+            if(users[i].techs[t] == 'CSS'){
+                users[i].techs.css = true
+                console.log(`O Usuario ${users[i].nome} trabalha com CSS!\n`)
+            } 
+        }
+    }
+    return users
+ }
+/*Percorra o array de usuários e, para cada um, verifique se o mesmo trabalha com CSS utilizando a função construída acima,
+ se SIM, imprima em tela as informações do usuário */
+
+ const csstest = UsaCSS(users)
